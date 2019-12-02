@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
-    # 'corsheaders'
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -45,12 +45,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-        'localhost:3000/'
-    )
 
 ROOT_URLCONF = 'main.urls'
 
@@ -123,3 +120,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 django_heroku.settings(locals())
 
+CORS_ORIGIN_ALLOW_ALL=True
