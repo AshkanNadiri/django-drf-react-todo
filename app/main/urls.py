@@ -4,12 +4,12 @@ from rest_framework import routers
 from todo import views as todo_views
 
 router = routers.DefaultRouter()
-router.register(r'todos', todo_views.TodoViewSet, 'todo')
+router.register(r'todos', todo_views.TodoViewSet, 'todos')
 router.register(r'users', todo_views.UserViewSet)
 router.register(r'groups', todo_views.GroupViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
