@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .serializer import UserSerializer, GroupSerializer
+from .serializer import UserSerializer, GroupSerializer, TodoSerializer
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
+from .models import Todo
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -16,3 +17,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all() 
     serializer_class = GroupSerializer
+
+class TodoViewSet(viewsets.ModelViewSet):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
