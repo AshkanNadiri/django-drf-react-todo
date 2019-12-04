@@ -20,7 +20,7 @@
       }
       refreshList = () => {
         axios
-          .get("https://8000-adad10b8-a752-4a71-9a23-5a16c1795476.ws-us02.gitpod.io/todos/")
+          .get("https://django-drf-todo-dec-2.herokuapp.com/api/todos/")
           .then(res => this.setState({ todoList: res.data.results }))
           .catch(err => console.log(err));
       };
@@ -91,17 +91,17 @@
         this.toggle();
         if (item.id) {
           axios
-            .put(`https://8000-adad10b8-a752-4a71-9a23-5a16c1795476.ws-us02.gitpod.io/todos/${item.id}/`, item)
+            .put(`https://django-drf-todo-dec-2.herokuapp.com/api/todos/${item.id}/`, item)
             .then(res => this.refreshList());
           return;
         }
         axios
-          .post("https://8000-adad10b8-a752-4a71-9a23-5a16c1795476.ws-us02.gitpod.io/todos/", item)
+          .post("https://django-drf-todo-dec-2.herokuapp.com/api/todos/", item)
           .then(res => this.refreshList());
       };
       handleDelete = item => {
         axios
-          .delete(`https://8000-adad10b8-a752-4a71-9a23-5a16c1795476.ws-us02.gitpod.io/todos/${item.id}/`)
+          .delete(`https://django-drf-todo-dec-2.herokuapp.com/api/todos/${item.id}/`)
           .then(res => this.refreshList());
       };
       createItem = () => {
