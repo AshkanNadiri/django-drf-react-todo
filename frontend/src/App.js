@@ -19,6 +19,7 @@ class App extends Component {
     this.refreshList();
     }
     refreshList = () => {
+
     axios
         .get("https://django-drf-todo-dec-2.herokuapp.com/api/todos/")
         .then(res => this.setState({ todoList: res.data.results }))
@@ -142,6 +143,7 @@ class App extends Component {
     }
     
 }
+
 
 export default App;
 
