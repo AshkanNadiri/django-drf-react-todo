@@ -142,13 +142,7 @@ class App extends Component {
     }
     
 }
-function resolveAfter2Seconds() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
-}
+
 export default App;
 
 
