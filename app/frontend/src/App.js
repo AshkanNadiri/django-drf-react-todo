@@ -18,8 +18,8 @@
       componentDidMount() {
         this.refreshList();
       }
-      refreshList = () => {
-        axios
+      refreshList = async () => {
+        await axios
           .get("https://django-drf-todo-dec-2.herokuapp.com/api/todos/")
           .then(res => this.setState({ todoList: res.data.results }))
           .catch(err => console.log(err));
